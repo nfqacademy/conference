@@ -12,7 +12,8 @@
         http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
 	<mvc:annotation-driven />
-	<mvc:resources mapping="/inc/**" location="/inc/" />
+	<mvc:resources mapping="/resources/**" location="/resources/" />
+	<mvc:resources mapping="/html/**" location="/html/" />
 	<context:component-scan base-package="lt.nfq.conference.controller" />
 
 	<bean id="velocityConfig"
