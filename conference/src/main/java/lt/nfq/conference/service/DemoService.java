@@ -8,10 +8,10 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class DemoService {
-	@Autowired 
-	private DemoMapper demoMapper;
-	
-	public Demo getDemoData(int id) {
-		return demoMapper.getDemoData(id);
-	}
+    @Autowired
+    private DemoMapper demoMapper;
+
+    public Demo getDemoData(int id) {
+        return demoMapper.getDemoData(id);
+    }
 }

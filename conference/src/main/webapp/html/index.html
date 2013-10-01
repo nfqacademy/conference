@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Conference list</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.min.css" type="text/css">
+        <link rel="stylesheet" href="/resources/css/main.css" type="text/css">
+        <link rel="shortcut icon" href="/resources/images/icon_32.png" sizes="32x32">
+        <link rel="shortcut icon" href="/resources/images/icon_48.png" sizes="48x48">
+        <link rel="shortcut icon" href="/resources/images/icon_128.png" sizes="128x128">
+    </head>
+    <body>
+        <form method="get" action="" id="filters">
+            <fieldset>
+                <legend>Search filter</legend>
+                <div class="formGroup">
+                    <label for="filterStart">Start date</label>
+                    <input type="text" name="start" value="2010-12-12" id="filterStart" class="datePicker">
+                </div>
+                <div class="formGroup">
+                    <label for="filterEnd">End date</label>
+                    <input type="text" name="end" value="2010-12-12" id="filterEnd" class="datePicker">
+                </div>
+                <div class="formGroup">
+                    <input type="submit" value="Search">
+                    <input type="reset" value="Reset">
+                </div>
+            </fieldset>
+        </form>
+
+        <fieldset>
+            <legend>Conference list:</legend>
+            <div id="conference"></div>
+        </fieldset>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+
+        <script src="/resources/js/conference.js"></script>
+    </body>
+</html>

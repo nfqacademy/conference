@@ -1,0 +1,28 @@
+form {
+    width: 200px;
+}
+
+form label {
+    display:block;
+}
+
+#filters {
+    width: 150px;
+}
+
+.formGroup {
+    margin-top: 10px;
+}
+
+.conferenceList {
+    border: 1px solid #cccccc;
+}
+
+.conferenceList th {
+    text-align: left;
+}
+
+.conferenceList td,
+.conferenceList th {
+    border: 1px solid #cccccc;
+}

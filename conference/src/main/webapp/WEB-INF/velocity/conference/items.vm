@@ -1,0 +1,22 @@
+#if ($conferenceList.size() > 0)
+    <table class="conferenceList">
+        <thead>
+        <tr>
+            <th>Conference name</th>
+            <th>Starts</th>
+            <th>Ends</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+            #foreach($conference in $conferenceList)
+            <tr data-id="$conference.getId()">
+                <td>$conference.getName()</td>
+                <td>$conference.getStartDate($dateFormat)</td>
+                <td>$conference.getEndDate($dateFormat)</td>
+                <td><a href="/conference/update?id=$conference.getId()" class="edit">Edit</a></td>
+            </tr>
+            #end
+        </tbody>
+    </table>
+#end

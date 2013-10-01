@@ -1,0 +1,15 @@
+<form method="post" action="/conference/save">
+    <input type="hidden" value="${conference.getId()}" name="id" />
+    <div class="formGroup">
+        <label for="formName">name</label>
+        <input type="text" name="name" id="formName" value="$!{conference.getName()}" />
+    </div>
+    <div class="formGroup">
+        <label for="formStart">Start date</label>
+        <input type="text" name="startDate" value="$!{conference.getStartDate($dateFormat)}" id="formStart" class="datePicker" />
+    </div>
+    <div class="formGroup">
+        <label for="formEnd">End date</label>
+        <input type="text" name="endDate" value="$!{conference.getEndDate($dateFormat)}" id="formEnd" class="datePicker" />
+    </div>
+</form>

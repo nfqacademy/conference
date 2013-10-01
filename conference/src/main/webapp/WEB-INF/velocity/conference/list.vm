@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Conference list</title>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.min.css" type="text/css">
+        #parse("WEB-INF/velocity/blocks/head.vm")
+    </head>
+    <body>
+        <form method="post" action="" id="filters">
+            <fieldset>
+                <legend>Search filter</legend>
+                <div class="formGroup">
+                    <label for="filterStart">Start date</label>
+                    <input type="text" name="start" value="$startDate" id="filterStart" class="datePicker">
+                </div>
+                <div class="formGroup">
+                    <label for="filterEnd">End date</label>
+                    <input type="text" name="end" value="$endDate" id="filterEnd" class="datePicker">
+                </div>
+                <div class="formGroup">
+                    <input type="submit" value="Search">
+                    <input type="reset" value="Reset">
+                </div>
+            </fieldset>
+        </form>
+
+        <fieldset>
+            <legend>Conference list:</legend>
+            <div id="conference">
+                #if ($conferenceList)
+                    #parse("WEB-INF/velocity/conference/items.vm")
+                #end
+            </div>
+        </fieldset>
+        <div id="conferenceForm"></div>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+        <script src="/resources/js/list.js"></script>
+    </body>
+</html>
