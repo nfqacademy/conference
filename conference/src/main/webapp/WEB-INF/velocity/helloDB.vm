@@ -2,8 +2,9 @@
 <head><title>Hello world</title></head>
 <body>
 <ul>
-<li>${demo1.id}: $demo1.data</li>
-<li>$demo2.id: $demo2.data</li>
+#foreach($demo in $data)
+   <li>${demo.id}: $demo.data</li>
+#end
 </ul>
 </body>
 </html>

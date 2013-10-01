@@ -1,10 +1,11 @@
 create table demo (
-	id INT PRIMARY KEY,
+	id IDENTITY PRIMARY KEY,
     data VARCHAR(100)
 );
 
-INSERT INTO demo (id, data) VALUES (1, 'Hello world');
-INSERT INTO demo (id, data) VALUES (2, 'Hello world2');
+INSERT INTO demo (data) VALUES ('Hello, world!');
+INSERT INTO demo (data) VALUES ('Hello, world again!');
+INSERT INTO demo (data) VALUES ('Hello, world for the third time!');
 
 
 create table conference (

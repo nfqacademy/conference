@@ -1,5 +1,8 @@
 package lt.nfq.conference.controller;
 
+import java.util.List;
+
+import lt.nfq.conference.domain.Demo;
 import lt.nfq.conference.service.DemoService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,8 +24,8 @@ public class HelloController {
 	
 	@RequestMapping(value = "/hellodb", method = RequestMethod.GET)
 	public String helloDB(ModelMap model) {
-		model.addAttribute("demo1", demoService.getDemoData(1));
-		model.addAttribute("demo2", demoService.getDemoData(2));
+		List<Demo> data = demoService.getDemoDataList();
+		model.addAttribute("data", data);
 		return "helloDB";
 	}
 }
