@@ -25,6 +25,7 @@
 
     <jdbc:initialize-database data-source="dataSource" ignore-failures="NONE" enabled="${jdbc.initialize}">
         <jdbc:script location="classpath:sql/schema.sql" />
+        <jdbc:script location="classpath:sql/sample-data.sql" />
     </jdbc:initialize-database>
 
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
