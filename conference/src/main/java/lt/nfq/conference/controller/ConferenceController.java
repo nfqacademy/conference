@@ -38,7 +38,7 @@ public class ConferenceController {
         model.addAttribute("dateFormat", simpleDateFormat);
 
         try {
-            model.addAttribute("conferenceList", conferenceService.getConferencesList(simpleDateFormat.parse(startDate), simpleDateFormat.parse(endDate)));
+            model.addAttribute("conferenceList", conferenceService.getConferencesByDates(simpleDateFormat.parse(startDate), simpleDateFormat.parse(endDate)));
         } catch (ParseException e) {
 
         }
@@ -51,7 +51,7 @@ public class ConferenceController {
                              @RequestParam(value = "start") Date start,
                              @RequestParam(value = "end") Date end) {
 
-        model.addAttribute("conferenceList", conferenceService.getConferencesList(start, end));
+        model.addAttribute("conferenceList", conferenceService.getConferencesByDates(start, end));
         model.addAttribute("dateFormat", getDateFormat());
 
         return "conference/items";
@@ -65,7 +65,7 @@ public class ConferenceController {
 
     @RequestMapping(value = "/update", method = RequestMethod.GET)
     public String update(ModelMap model, @RequestParam(value = "id") int id) {
-        model.addAttribute("conference", conferenceService.getConferences(id));
+        model.addAttribute("conference", conferenceService.getConference(id));
         model.addAttribute("dateFormat", getDateFormat());
         return "conference/form";
     }
