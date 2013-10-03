@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Conference list</title>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.min.css" type="text/css">
+        #parse("WEB-INF/velocity/blocks/head.vm")
+	    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>      
+    </head>
+	<body>
+		#if ($form.id)
+		   <h1>Edit conference</h1>
+		#else
+		   <h1>Create new conference</h1>
+		#end
+		<form method="post" action="form">
+			#springFormHiddenInput("form.id" "")
+		    <div class="formGroup">
+		        <label for="formName">name</label>
+	    	    #springFormInput("form.name" "")
+	   		</div>
+	   	 	<div class="formGroup">
+	        	<label for="formStart">Start date</label>
+	        	#springFormInput("form.startDate" "class='datePicker'")
+	    	</div>
+	    	<div class="formGroup">
+	        	<label for="formEnd">End date</label>
+	        	#springFormInput("form.endDate" "class='datePicker'")
+	    	</div>
+	    	<input name="submit" type="submit" value="Submit" />
+		</form>
+	</body>
+	<script>
+		(function( jQuery, window, undefined ) {
+    		jQuery( ".datePicker" ).datepicker({dateFormat:"yy-mm-dd"});
+		})( jQuery, window, undefined);
+	</script>
+</html>
