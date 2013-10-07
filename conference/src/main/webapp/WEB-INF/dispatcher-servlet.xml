@@ -17,15 +17,25 @@
     <context:component-scan base-package="lt.nfq.conference.controller" />
 
     <mvc:annotation-driven />
+    <mvc:interceptors>
+    <bean id="webContentInterceptor" 
+          class="org.springframework.web.servlet.mvc.WebContentInterceptor">
+        <property name="cacheSeconds" value="0"/>
+        <property name="useExpiresHeader" value="true"/>
+        <property name="useCacheControlHeader" value="true"/>
+        <property name="useCacheControlNoStore" value="true"/>
+    </bean>
+</mvc:interceptors>
 
     <bean id="velocityConfig" class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
-        <property name="resourceLoaderPath" value="/" />
+        <property name="resourceLoaderPath" value="WEB-INF/velocity/" />
         <property name="configLocation" value="classpath:velocity.properties"/>
     </bean>
 
     <bean id="viewResolver" class="org.springframework.web.servlet.view.velocity.VelocityViewResolver">
-        <property name="prefix" value="WEB-INF/velocity/" />
+        <property name="prefix" value="/" />
         <property name="suffix" value=".vm" />
         <property name="exposeSpringMacroHelpers" value="true" />
+        <property name="contentType" value="text/html; charset=UTF-8" />
     </bean>
 </beans>

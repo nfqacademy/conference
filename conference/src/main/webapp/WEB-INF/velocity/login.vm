@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>Login form</title>
-        #parse("WEB-INF/velocity/blocks/head.vm")
+        #parse("blocks/head.vm")
     </head>
     <body>
         <form method="post" action="/login">

@@ -23,7 +23,7 @@
         <property name="password" value="${jdbc.password}" />
     </bean>
 
-    <jdbc:initialize-database data-source="dataSource" ignore-failures="NONE" enabled="${jdbc.initialize}">
+    <jdbc:initialize-database data-source="dataSource" ignore-failures="ALL" enabled="${jdbc.initialize}">
         <jdbc:script location="classpath:sql/schema.sql" />
         <jdbc:script location="classpath:sql/sample-data.sql" />
     </jdbc:initialize-database>

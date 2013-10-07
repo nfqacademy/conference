@@ -3,7 +3,7 @@
     <head>
         <title>Conference list</title>
         <link rel="stylesheet" href="//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.min.css" type="text/css">
-        #parse("WEB-INF/velocity/blocks/head.vm")
+        #parse("blocks/head.vm")
     </head>
     <body>
         <form method="post" action="" id="filters">
@@ -28,7 +28,7 @@
             <legend>Conference list:</legend>
             <div id="conference">
                 #if ($conferenceList)
-                    #parse("WEB-INF/velocity/conference/items.vm")
+                    #parse("conference/items.vm")
                 #end
             </div>
         </fieldset>
