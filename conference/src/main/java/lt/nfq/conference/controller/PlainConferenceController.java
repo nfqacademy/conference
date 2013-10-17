@@ -109,11 +109,7 @@ public class PlainConferenceController {
      */
     @RequestMapping(value="/plain/conference/form", method=RequestMethod.POST)
     public Form form(@Valid Form form, Model model, BindingResult bindingResult) {
-    	
-    	if (bindingResult.hasErrors()) {
-    		System.out.println("===== HAS ERRORS");
-    		
-    	}
+
         conferenceService.saveConference(form.getCondefence());
         
         model.addAttribute("statusMessageKey", "person.form.msg.success");
