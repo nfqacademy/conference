@@ -25,7 +25,6 @@ public class QunitTestRunner {
         String basePath = request.getServletContext().getRealPath("/resources/js/qunit/tests");
         LinkedList<String> results = new LinkedList<String>();
         getFiles(basePath, results, basePath.length() + 1);
-        
         return results;
     }
     
@@ -40,7 +39,6 @@ public class QunitTestRunner {
                 getFiles(file.getAbsolutePath(), files, basePathLength);
             }
         }
-        
     }
 }
 
